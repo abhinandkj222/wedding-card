@@ -104,6 +104,29 @@ const Invitation = () => {
     );
   };
 
+  const addToCalendar = () => {
+    const eventTitle = 'Surabhi & Nandhu Wedding';
+    const eventDetails =
+      'Join us as we celebrate the wedding of Surabhi & Nandhu.';
+
+    const location = 'SB Convention Center, Mullannbazar, Kerala';
+
+    // December 13, 2026
+    // Set an approximate wedding time here if you know it.
+    const startDate = '20261213T100000';
+    const endDate = '20261213T150000';
+
+    const googleCalendarUrl =
+      `https://calendar.google.com/calendar/render?action=TEMPLATE` +
+      `&text=${encodeURIComponent(eventTitle)}` +
+      `&dates=${startDate}/${endDate}` +
+      `&details=${encodeURIComponent(eventDetails)}` +
+      `&location=${encodeURIComponent(location)}` +
+      `&ctz=Asia/Kolkata`;
+
+    window.open(googleCalendarUrl, '_blank', 'noopener,noreferrer');
+  };
+
   const submitRsvp = () => {
     setRsvpSubmitted(true);
     setShowRsvp(false);
@@ -854,6 +877,13 @@ const Invitation = () => {
                   <p className="mt-5 text-[7px] uppercase tracking-[0.3em] text-[#7d857c] sm:mt-6 sm:text-[9px] sm:tracking-[0.35em]">
                     Sunday · 2026
                   </p>
+                  <button
+                    onClick={addToCalendar}
+                    className="mt-8 inline-flex items-center gap-2 border border-[#526653]/25 px-5 py-3 text-[7px] uppercase tracking-[0.28em] text-[#526653] transition duration-500 hover:bg-[#526653] hover:text-white sm:mt-10 sm:px-6 sm:py-3 sm:text-[8px]"
+                  >
+                    <CalendarDays size={12} strokeWidth={1.5} />
+                    Add to Calendar
+                  </button>
                 </div>
               </div>
             </div>
