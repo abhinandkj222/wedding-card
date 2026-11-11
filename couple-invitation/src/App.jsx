@@ -3706,11 +3706,11 @@ const Invitation = () => {
                 <div className="my-5 h-px w-12 bg-[#b99860]" />
 
                 <p className="font-serif text-xl text-[#405141]">
-                  Sureelan & Rathi Sureelan
+                  Suseelan & Rathi Suseelan
                 </p>
 
                 <p className="mt-4 text-sm leading-7 text-[#80643a]">
-                  Karezhath House,
+                  Kariyezhath House,
                   <br />
                   P.O. Pathazhakad,
                   <br />
