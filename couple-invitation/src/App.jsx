@@ -2114,9 +2114,7 @@ const Invitation = () => {
       },
       {
         threshold: isMobileScreen ? 0.01 : 0.12,
-        rootMargin: isMobileScreen
-          ? '0px 0px -20px 0px'
-          : '0px 0px -80px 0px',
+        rootMargin: isMobileScreen ? '0px 0px -20px 0px' : '0px 0px -80px 0px',
       },
     );
 
@@ -2709,9 +2707,7 @@ const Invitation = () => {
             style={{
               animation: 'softReveal 1s ease-out 5.4s forwards',
             }}
-          >
-            Sound on for the full experience
-          </p>
+          ></p>
         </div>
       </div>
 
@@ -3303,7 +3299,7 @@ const Invitation = () => {
               The celebration
             </p>
 
-            <h2 className="mt-4 font-serif text-[clamp(3.5rem,12vw,7rem)] font-light text-[#405141]">
+            <h2 className="mt-4 whitespace-nowrap font-serif text-[clamp(2.8rem,10vw,7rem)] font-light text-[#405141]">
               Join our day
             </h2>
           </div>
@@ -4308,5 +4304,3 @@ const Invitation = () => {
 };
 
 export default Invitation;
-
-
