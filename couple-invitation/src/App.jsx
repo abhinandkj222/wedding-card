@@ -2281,11 +2281,26 @@ const Invitation = () => {
 
     const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
 
-    gradient.addColorStop(0, '#d2b98f');
-    gradient.addColorStop(0.45, '#eadfc8');
-    gradient.addColorStop(1, '#c6a879');
+    gradient.addColorStop(0, '#785321');
+    gradient.addColorStop(0.18, '#c49a50');
+    gradient.addColorStop(0.38, '#f2d99c');
+    gradient.addColorStop(0.55, '#b78a3e');
+    gradient.addColorStop(0.76, '#e6c77f');
+    gradient.addColorStop(1, '#795322');
 
     ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, rect.width, rect.height);
+
+    // Premium metallic gold shine
+    const shine = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+
+    shine.addColorStop(0, 'rgba(255,255,255,0.35)');
+    shine.addColorStop(0.3, 'rgba(255,255,255,0.08)');
+    shine.addColorStop(0.5, 'rgba(255,255,255,0.02)');
+    shine.addColorStop(0.75, 'rgba(255,255,255,0.16)');
+    shine.addColorStop(1, 'rgba(255,255,255,0.3)');
+
+    ctx.fillStyle = shine;
     ctx.fillRect(0, 0, rect.width, rect.height);
 
     // Elegant tiny pattern
@@ -2618,7 +2633,7 @@ const Invitation = () => {
                 {'SURABHI'.split('').map((letter, index) => (
                   <span
                     key={index}
-                    className="font-serif text-[25px] font-light tracking-[0.015em] text-[#3d4c3e] opacity-0 xs:text-[29px] sm:text-[36px] md:text-[46px]"
+                    className="font-serif text-[25px] font-light tracking-[0.015em] text-[#76501F] opacity-0 xs:text-[29px] sm:text-[36px] md:text-[46px]"
                     style={{
                       animation: `letterBloom 1.15s cubic-bezier(.16,1,.3,1) ${
                         2.25 + index * 0.1
@@ -2643,7 +2658,7 @@ const Invitation = () => {
                 {'NANDU'.split('').map((letter, index) => (
                   <span
                     key={index}
-                    className="font-serif text-[25px] font-light tracking-[0.015em] text-[#3d4c3e] opacity-0 xs:text-[29px] sm:text-[36px] md:text-[46px]"
+                    className="font-serif text-[25px] font-light tracking-[0.015em] text-[#76501F] opacity-0 xs:text-[29px] sm:text-[36px] md:text-[46px]"
                     style={{
                       animation: `letterBloom 1.15s cubic-bezier(.16,1,.3,1) ${
                         3.3 + index * 0.1
@@ -2921,7 +2936,7 @@ const Invitation = () => {
                 A beautiful beginning
               </p>
 
-              <h1 className="mt-7 font-serif text-[clamp(4.3rem,17vw,7.8rem)] font-light leading-[0.78] tracking-[-0.07em] text-[#384638]">
+              <h1 className="mt-7 font-serif text-[clamp(4.3rem,17vw,7.8rem)] font-light leading-[0.78] tracking-[-0.07em] bg-gradient-to-b from-[#D8B66A] via-[#A87932] to-[#70501F] bg-clip-text text-transparent drop-shadow-[0_3px_8px_rgba(143,101,35,0.15)]">
                 Surabhi
               </h1>
 
@@ -2935,7 +2950,7 @@ const Invitation = () => {
                 <span className="h-px w-12 bg-[#d19b91] sm:w-16" />
               </div>
 
-              <h1 className="font-serif text-[clamp(4.3rem,17vw,7.8rem)] font-light leading-[0.78] tracking-[-0.07em] text-[#384638]">
+              <h1 className="font-serif text-[clamp(4.3rem,17vw,7.8rem)] font-light leading-[0.78] tracking-[-0.07em] bg-gradient-to-b from-[#D8B66A] via-[#A87932] to-[#70501F] bg-clip-text text-transparent drop-shadow-[0_3px_8px_rgba(143,101,35,0.15)]">
                 Nandu
               </h1>
 
@@ -2977,7 +2992,7 @@ const Invitation = () => {
               <div className="hanging-photo hero-hanging relative rotate-[1.5deg] overflow-visible border-[7px] border-white bg-white p-1 shadow-[0_35px_80px_rgba(45,55,45,.18)] sm:border-[10px]">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <img
-                    src={couple1}
+                    src={couple3}
                     alt="Surabhi and Nandu"
                     className="h-full w-full object-cover"
                   />
@@ -3308,8 +3323,8 @@ const Invitation = () => {
             {/* DATE - SCRATCH TO REVEAL */}
 
             <div
-              className={`relative overflow-hidden border border-white/70 bg-[#f8f4ec]/80 p-7 shadow-[0_25px_60px_rgba(55,65,55,.08)] backdrop-blur-xl transition-all duration-1000 sm:p-10 md:p-14 ${
-                dateRevealed ? 'shadow-[0_30px_90px_rgba(55,65,55,.14)]' : ''
+              className={`relative overflow-hidden rounded-sm border border-[#b99860]/40 bg-gradient-to-br from-[#fffaf0] via-[#f8f0e2] to-[#eee0c8] p-7 shadow-[0_25px_70px_rgba(130,96,43,.13)] backdrop-blur-xl transition-all duration-1000 sm:p-10 md:p-14 ${
+                dateRevealed ? 'shadow-[0_30px_90px_rgba(143,105,44,.22)]' : ''
               }`}
             >
               {/* Ambient glow */}
@@ -3348,11 +3363,13 @@ const Invitation = () => {
                 {/* SCRATCH AREA */}
 
                 <div
-                  className={`relative mt-10 overflow-hidden rounded-[4px] border border-[#c7b393]/20 sm:mt-14 ${
-                    dateRevealed ? 'bg-[#f8f4ec]' : 'bg-[#e8dcc6]'
+                  className={`relative mt-10 overflow-hidden rounded-[5px] border border-[#a98142]/60 shadow-[inset_0_0_25px_rgba(95,65,25,.12),0_12px_30px_rgba(125,91,39,.12)] sm:mt-14 ${
+                    dateRevealed ? 'bg-[#fffaf0]' : 'bg-[#b18a4b]'
                   }`}
                   style={{
-                    minHeight: '330px',
+                    minHeight: 330,
+                    boxShadow:
+                      '0 0 0 1px rgba(184,145,75,0.25), 0 0 25px rgba(184,145,75,0.18), inset 0 0 20px rgba(255,245,220,0.12)',
                   }}
                 >
                   {/* REAL DATE */}
@@ -3391,7 +3408,7 @@ const Invitation = () => {
                         {[...Array(14)].map((_, index) => (
                           <span
                             key={index}
-                            className="pointer-events-none absolute text-[#c49b6b]"
+                            className="pointer-events-none absolute text-[#c49b6b] animate-[goldReveal_1.2s_ease-out_both]"
                             style={{
                               left: `${8 + ((index * 19) % 84)}%`,
                               top: `${7 + ((index * 31) % 80)}%`,
@@ -3414,6 +3431,10 @@ const Invitation = () => {
                   {!dateRevealed && (
                     <canvas
                       ref={scratchCanvasRef}
+                      style={{
+                        cursor: 'crosshair',
+                        touchAction: 'none',
+                      }}
                       className="absolute inset-0 z-20 h-full w-full cursor-crosshair touch-none"
                       onMouseDown={handleScratchStart}
                       onMouseMove={handleScratchMove}
@@ -3521,62 +3542,182 @@ const Invitation = () => {
                 ))}
             </div>
 
-            {/* VENUE */}
+            {/* VENUE - PREMIUM GOLD */}
 
-            <div className="relative overflow-hidden border border-white/70 bg-[#f8f4ec]/80 p-7 shadow-[0_25px_60px_rgba(75,55,50,.08)] backdrop-blur-xl sm:p-10 md:p-14">
-              <div className="absolute bottom-0 right-0 h-36 w-36 rounded-full bg-[#e9c2b8]/40 blur-[65px] sm:h-48 sm:w-48" />
+            <div className="relative isolate overflow-hidden rounded-sm border border-[#b99860]/50 bg-gradient-to-br from-[#fffaf0] via-[#f7efdf] to-[#ead9b9] p-7 shadow-[0_25px_70px_rgba(130,96,43,.14)] sm:p-10 md:p-14">
+              {/* GOLD GLOW */}
+              <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#d5b36e]/20 blur-[85px]" />
+              <div className="pointer-events-none absolute -bottom-20 -left-16 h-64 w-64 rounded-full bg-[#c69a50]/15 blur-[85px]" />
+              <div className="pointer-events-none absolute inset-2 border border-[#b99860]/25 sm:inset-3" />
 
-              <div className="relative">
+              <div className="relative z-10">
+                {/* HEADER */}
                 <div className="flex items-center justify-between">
-                  <p className="text-[7px] uppercase tracking-[0.4em] text-[#978780] sm:text-[8px] sm:tracking-[0.45em]">
-                    The venue
+                  <p className="text-[8px] uppercase tracking-[0.45em] text-[#9a7841] sm:text-[9px]">
+                    The Wedding Venue
                   </p>
 
                   <MapPin
-                    size={19}
-                    strokeWidth={1}
-                    className="text-[#c2867e] sm:h-[22px] sm:w-[22px]"
+                    size={22}
+                    strokeWidth={1.2}
+                    className="text-[#b18a4b]"
                   />
                 </div>
 
+                {/* VENUE NAME */}
                 <div className="mt-12 sm:mt-16">
-                  <h3 className="max-w-md font-serif text-[clamp(2.4rem,8vw,3.5rem)] font-light leading-[1.05] text-[#405141]">
-                    SB Convention Center
+                  <p className="font-serif text-sm italic text-[#a17c43]">
+                    The celebration awaits
+                  </p>
+
+                  <h3 className="mt-4 max-w-xl font-serif text-[clamp(2.5rem,8vw,4.5rem)] font-light leading-[1.05] tracking-[-0.035em] text-[#405141]">
+                    SB Convention
+                    <span className="block italic text-[#a77e3d]">Centre</span>
                   </h3>
 
-                  <p className="mt-5 text-[13px] leading-7 text-[#7b8179] sm:text-sm">
+                  <p className="mt-6 text-sm leading-7 text-[#77796d] sm:text-base">
                     RBM Arcade,
                     <br />
-                    Mullambazar
+                    Mullan Bazar.
                   </p>
 
                   <button
                     onClick={openLocation}
-                    className="mt-8 inline-flex items-center gap-2 border border-[#526653]/25 px-5 py-3 text-[7px] uppercase tracking-[0.28em] text-[#526653] transition duration-500 hover:bg-[#526653] hover:text-white sm:mt-10 sm:px-6 sm:py-3 sm:text-[8px]"
+                    className="mt-8 inline-flex items-center gap-3 border border-[#ad874b]/60 bg-[#b18a4b]/5 px-6 py-3.5 text-[8px] uppercase tracking-[0.3em] text-[#80612e] transition-all duration-500 hover:-translate-y-1 hover:bg-[#a98243] hover:text-white hover:shadow-lg"
                   >
-                    <Navigation size={11} />
+                    <Navigation size={13} />
                     View Location
                   </button>
+                </div>
 
-                  <div className="mt-8 flex flex-col items-center gap-3 border-t border-[#526653]/10 pt-7 sm:flex-row sm:items-center sm:gap-5">
-                    <div className="rounded-xl border border-white bg-white p-2 shadow-md">
-                      <img
-                        src={venueQr}
-                        alt="QR code to open the wedding venue in Google Maps"
-                        className="h-28 w-28"
-                      />
-                    </div>
-                    <div className="text-center sm:text-left">
-                      <p className="font-serif text-xl italic text-[#405141]">
-                        Find your way to us
+                {/* WEDDING DATE AND MUHURTHAM */}
+                {dateRevealed && (
+                  <div className="animate-[goldReveal_1.2s_ease-out_both] mt-10 grid gap-6 border-y border-[#b99860]/30 py-7 sm:mt-12 sm:grid-cols-2 sm:gap-8">
+                    <div>
+                      <p className="text-[8px] uppercase tracking-[0.35em] text-[#9a7841]">
+                        Wedding Date
                       </p>
-                      <p className="mt-2 max-w-xs text-[11px] leading-6 text-[#7b8179]">
-                        Scan this QR code to open the wedding venue location in
-                        Google Maps.
+
+                      <p className="mt-3 font-serif text-2xl text-[#405141] sm:text-3xl">
+                        13 December 2026
+                      </p>
+
+                      <p className="mt-2 text-xs text-[#858174]">
+                        Sunday · 27 Vrischikam 1202
+                      </p>
+                    </div>
+
+                    <div className="sm:border-l sm:border-[#b99860]/30 sm:pl-8">
+                      <p className="text-[8px] uppercase tracking-[0.35em] text-[#9a7841]">
+                        Muhurtham
+                      </p>
+
+                      <p className="mt-3 font-serif text-2xl text-[#405141] sm:text-3xl">
+                        11:45 AM
+                      </p>
+
+                      <p className="mt-2 text-xs text-[#858174]">
+                        Until 12:15 PM
                       </p>
                     </div>
                   </div>
+                )}
+
+                {/* QR CODE */}
+                <div className="mt-8 flex flex-col items-center gap-5 sm:flex-row sm:gap-7">
+                  <div className="rounded-xl border border-[#c5a66e]/40 bg-white p-2.5 shadow-[0_12px_30px_rgba(90,65,30,.12)]">
+                    <img
+                      src={venueQr}
+                      alt="Wedding venue Google Maps QR code"
+                      className="h-28 w-28 object-contain sm:h-32 sm:w-32"
+                    />
+                  </div>
+
+                  <div className="text-center sm:text-left">
+                    <p className="font-serif text-2xl italic text-[#80643a] sm:text-3xl">
+                      Find your way to us
+                    </p>
+
+                    <p className="mt-3 max-w-sm text-xs leading-7 text-[#77796d] sm:text-sm">
+                      Scan this QR code to find our wedding venue and get
+                      directions through Google Maps.
+                    </p>
+
+                    <p className="mt-4 text-[8px] uppercase tracking-[0.25em] text-[#a17c43]">
+                      We look forward to celebrating with you
+                    </p>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FAMILY DETAILS - PREMIUM GOLD */}
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {/* GROOM'S FAMILY */}
+            <div className="relative overflow-hidden border border-[#b99860]/40 bg-gradient-to-br from-[#fffaf0] to-[#eee0c8] p-7 shadow-[0_15px_40px_rgba(130,96,43,.09)] sm:p-9">
+              <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#d5b36e]/20 blur-[55px]" />
+
+              <div className="relative">
+                <p className="text-[8px] uppercase tracking-[0.4em] text-[#9a7841]">
+                  With the blessings of
+                </p>
+
+                <h3 className="mt-4 font-serif text-3xl font-light text-[#80643a]">
+                  Groom's Family
+                </h3>
+
+                <div className="my-5 h-px w-12 bg-[#b99860]" />
+
+                <p className="font-serif text-xl text-[#405141]">
+                  Nandhu Murali
+                </p>
+
+                <p className="mt-3 text-sm leading-7 text-[#77796d]">
+                  Son of Mr. K. V. Muralidharan
+                  <br />
+                  and Mrs. Beena Murali
+                </p>
+
+                <p className="mt-4 text-sm leading-7 text-[#80643a]">
+                  Kalavambara House,
+                  <br />
+                  Perumbadanna,
+                  <br />
+                  North Paravur.
+                </p>
+              </div>
+            </div>
+
+            {/* INVITATION FROM */}
+            <div className="relative overflow-hidden border border-[#b99860]/40 bg-gradient-to-br from-[#fffaf0] to-[#eee0c8] p-7 shadow-[0_15px_40px_rgba(130,96,43,.09)] sm:p-9">
+              <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#d5b36e]/20 blur-[55px]" />
+
+              <div className="relative">
+                <p className="text-[8px] uppercase tracking-[0.4em] text-[#9a7841]">
+                  Cordially invited by
+                </p>
+
+                <h3 className="mt-4 font-serif text-3xl font-light text-[#80643a]">
+                  Invitation From
+                </h3>
+
+                <div className="my-5 h-px w-12 bg-[#b99860]" />
+
+                <p className="font-serif text-xl text-[#405141]">
+                  Sureelan & Rathi Sureelan
+                </p>
+
+                <p className="mt-4 text-sm leading-7 text-[#80643a]">
+                  Karezhath House,
+                  <br />
+                  P.O. Pathazhakad,
+                  <br />
+                  Mullan Bazar,
+                  <br />
+                  S.N. Puram.
+                </p>
               </div>
             </div>
           </div>
@@ -4239,6 +4380,23 @@ const Invitation = () => {
           .hero-hanging::after { top: -18px; }
           .gallery-hanging-stage::before { top: 2px; }
         }
+
+        @keyframes goldReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
 
         @media (prefers-reduced-motion: reduce) {
           *,
