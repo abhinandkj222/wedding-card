@@ -3671,7 +3671,7 @@ const Invitation = () => {
                 <div className="my-5 h-px w-12 bg-[#b99860]" />
 
                 <p className="font-serif text-xl text-[#405141]">
-                  Nandhu Murali
+                  Nandu Murali
                 </p>
 
                 <p className="mt-3 text-sm leading-7 text-[#77796d]">
